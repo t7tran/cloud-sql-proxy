@@ -1,8 +1,10 @@
 FROM alpine:3.9
 
-RUN apk --no-cache add ca-certificates && \
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \
-    chmod +x /usr/local/bin/cloud_sql_proxy
+COPY rootfs /
 
-ENTRYPOINT ["cloud_sql_proxy"]
+RUN apk --no-cache add ca-certificates bash && \
+    wget https://storage.googleapis.com/cloudsql-proxy/v1.14/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \
+    chmod +x /usr/local/bin/cloud_sql_proxy /*.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
