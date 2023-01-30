@@ -1,6 +1,6 @@
-FROM alpine:3.16
+FROM alpine:3.17
 
-ARG PROXY_VERSION=1.33.0
+ARG PROXY_VERSION=2.0.0
 ARG MSSQLTOOLS_VERSION=18_18.1.1.1-1 # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
 ARG MSSQLTOOLS_URL=https://download.microsoft.com/download/b/9/f/b9f3cce4-3925-46d4-9f46-da08869c6486
 
@@ -20,7 +20,7 @@ RUN addgroup alpine && adduser -S -D -G alpine alpine && \
     apk add --allow-untrusted /tmp/mssql-tools.apk && \
     for f in `find /opt/mssql-tools*/bin/ -type f -executable`; do ln -s $f /usr/local/bin/`basename $f`; done && \
 # install cloud_sql_proxy
-    wget https://storage.googleapis.com/cloudsql-proxy/v${PROXY_VERSION}/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \
+    wget https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v${PROXY_VERSION}/cloud-sql-proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \
     chmod +x /usr/local/bin/cloud_sql_proxy /*.sh && \
 # finalise and cleanup
     apk del gnupg && \
