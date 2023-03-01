@@ -7,7 +7,7 @@ ARG MSSQLTOOLS_URL=https://download.microsoft.com/download/b/9/f/b9f3cce4-3925-4
 COPY rootfs /
 
 RUN addgroup alpine && adduser -S -D -G alpine alpine && \
-    apk --no-cache add ca-certificates bash mariadb-client postgresql gnupg && \
+    apk --no-cache add ca-certificates bash mariadb-client mariadb-connector-c postgresql gnupg && \
 # install MSSQL tools
     wget -O /tmp/msodbcsql.apk ${MSSQLTOOLS_URL}/msodbcsql${MSSQLTOOLS_VERSION}_amd64.apk && \
     wget -O /tmp/msodbcsql.sig ${MSSQLTOOLS_URL}/msodbcsql${MSSQLTOOLS_VERSION}_amd64.sig && \
