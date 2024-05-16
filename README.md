@@ -1,4 +1,4 @@
 # cloud-sql-proxy
 Docker container of the Google Cloud SQL proxy
 
-	docker pull ghcr.io/t7tran/cloud-sql-proxy:2.11.0
+	docker pull ghcr.io/t7tran/cloud-sql-proxy:2.11.1
