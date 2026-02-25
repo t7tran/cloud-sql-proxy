@@ -11,7 +11,7 @@ RUN addgroup alpine && adduser -S -D -G alpine alpine && \
                        bash \
                        mariadb-client \
                        mariadb-connector-c \
-                       postgresql15-client \
+                       postgresql17-client \
                        gnupg \
                        && \
 # install MSSQL tools
