@@ -1,6 +1,6 @@
-FROM alpine:3.23.4
+FROM alpine:3.24.1
 
-ARG PROXY_VERSION=2.22.0
+ARG PROXY_VERSION=2.24.1
 ARG MSSQLTOOLS_VERSION=18_18.6.2.1-1 # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
 ARG MSSQLTOOLS_URL=https://download.microsoft.com/download/cad0d30f-b9b1-4765-a011-81d8a66c8b8d
 ARG MSODBCSQL_URL=https://download.microsoft.com/download/0b3d5518-b4a7-4a2b-afc7-7ee9e967f93c
