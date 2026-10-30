@@ -1,9 +1,9 @@
-FROM alpine:3.24.1
+FROM alpine:3.24.3
 
-ARG PROXY_VERSION=2.24.1
-ARG MSSQLTOOLS_VERSION=18_18.6.2.1-1 # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
-ARG MSSQLTOOLS_URL=https://download.microsoft.com/download/cad0d30f-b9b1-4765-a011-81d8a66c8b8d
-ARG MSODBCSQL_URL=https://download.microsoft.com/download/0b3d5518-b4a7-4a2b-afc7-7ee9e967f93c
+ARG PROXY_VERSION=2.27.0
+ARG MSSQLTOOLS_VERSION=18_18.7.1.1-1 # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
+ARG MSSQLTOOLS_URL=https://download.microsoft.com/download/a5dcc5e7-6124-49d3-8df4-48d738a0e784
+ARG MSODBCSQL_URL=https://download.microsoft.com/download/ade174b7-8cea-4543-91a6-c33ae320c2f0
 
 COPY rootfs /
 
